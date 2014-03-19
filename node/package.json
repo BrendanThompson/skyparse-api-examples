@@ -1,0 +1,28 @@
+{
+  "name": "skyparse-node-rest-client",
+  "version": "0.0.1",
+  "description": "An example node.js rest client for the skyParse service.",
+  "main": "rest-app.js",
+  "dependencies": {
+    "node-rest-client": "~0.8.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BrendanThompson/skyparse-api-examples"
+  },
+  "keywords": [
+    "nodejs",
+    "rest",
+    "skyparse"
+  ],
+  "author": "Brendan Thompson (brendan@btsystems.com.au)",
+  "license": "none",
+  "bugs": {
+    "url": "https://github.com/BrendanThompson/skyparse-api-examples/issues"
+  },
+  "homepage": "https://github.com/BrendanThompson/skyparse-api-examples"
+}
