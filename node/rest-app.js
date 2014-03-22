@@ -1,6 +1,7 @@
 var Client = require('node-rest-client').Client;
+
 var baseURL = "https://www.skyparse.com/api/hrxml?";
-var filePath = "C:\\tmp\\edms.docx";
+var filePath = "/Users/brendan/Development/skyparse-api-examples/node/examplecv.docx";
 
 function encodeFile(filePath){
 	var fs = require('fs');
@@ -28,23 +29,20 @@ function getCV() {
 }
 
 function postCV() {
-	var client = new Client();
-
-	args = {
-		path: {
-			"accountID": "13213",
-			"secretKey": "test",
-			"fileName": "edms.docx"
-		},
-		data: encodeFile(filePath)
-	};
-
-	client.post(baseURL + "accountid=${accountID}&secretkey=${secretKey}&filename=${fileName}", args, function(data, res) {
-		/*optional stuff to do after success */
-		console.log(data);
-	});
+	var unirest = require('unirest');
+	
+	unirest.post(baseURL	)
+	.headers({'Accept': 'application/xml'})
+	// .field(name: string, value: string)
+	.send({
+		'accountID': '13213',
+		'secretKey': 'test',
+		'fileName': 'examplecv.docx'
+	})
+	.attach('file', '://Development/skyparse-api-examples/node/examplecv.docx')
+	.end(function (response) {
+		console.log(response.body)
+	})
 }
 
 postCV();
-
-// encodeFile(filePath);
